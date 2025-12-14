@@ -94,4 +94,4 @@ The changes will be reflected in the dashboard (requires server restart in this 
 
 ## License
 
-MIT
+Apache
