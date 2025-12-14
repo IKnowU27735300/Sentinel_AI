@@ -1,0 +1,29 @@
+project_name: "Sentinel Project"
+server_timezone: "UTC"
+
+maintenance_window:
+  days: ["Sunday"]
+  start_time: "02:00"
+  end_time: "05:00"
+
+services:
+  - name: "frontend"
+    type: "nginx"
+    health_check: "http://localhost:80/health"
+  - name: "api"
+    type: "docker"
+    container_name: "myapp-api"
+    health_check: "http://localhost:8000/health"
+  - name: "database"
+    type: "postgres"
+    host: "localhost"
+    port: 5432
+    username: "db_user" # Store password in secure env/secrets
+
+notifications:
+  method: "email"
+  contact: "admin@example.com"
+
+security:
+  allow_auto_remediation: true
+  allowed_actions: ["restart_service", "trigger_backup"]

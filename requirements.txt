@@ -1,0 +1,33 @@
+Sentinel AI - Server Maintenance Agent
+========================================
+
+System Requirements
+-------------------
+1. Node.js (Version 18.0.0 or higher)
+   - Download: https://nodejs.org/
+2. npm (Node Package Manager)
+   - Typically installed automatically with Node.js.
+
+Project Dependencies
+--------------------
+All project libraries (React, Vite, Express, Gemini SDK, etc.) are managed via package.json.
+To install them, run the following command in the project root:
+
+    npm install
+
+Environment Setup
+-----------------
+1. Create a file named `.env.local` in the root directory.
+2. Add your Google Gemini API key to it:
+
+    GEMINI_API_KEY=your_actual_api_key_here
+
+Running the Application
+-----------------------
+You must run two separate terminals:
+
+1. Backend Agent (Port 3001):
+    npm run server
+
+2. Frontend Dashboard (Port 3000):
+    npm run dev
